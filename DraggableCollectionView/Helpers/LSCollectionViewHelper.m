@@ -236,6 +236,11 @@ typedef NS_ENUM(NSInteger, _ScrollingDirection) {
             [mockCell removeFromSuperview];
             mockCell = [[UIImageView alloc] initWithFrame:cell.frame];
             mockCell.image = [self imageFromCell:cell];
+
+            mockCell.layer.borderWidth = 1.0;
+            mockCell.layer.borderColor = [[UIColor redColor] CGColor];
+            mockCell.alpha = 0.7;
+
             mockCenter = mockCell.center;
             [self.collectionView addSubview:mockCell];
             [UIView
